@@ -1,0 +1,41 @@
+.about-heading {
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-container {
+  background-color: #eee;
+  padding-bottom: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+.about-sso-flows {
+  display: flex;
+  margin-top: 20px;
+}
+
+.about-initiated-sso-heading {
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.about-initiated-sso {
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.about-initiated-sso-content {
+  text-align: left;
+}
+
+
+@media (max-width: 800px) {
+  .about-sso-flows {
+    flex-direction: column;
+  }
+}

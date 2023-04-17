@@ -1,0 +1,29 @@
+$backgroudColor: #333333;
+$backgroudLightBlue: #B5D3ED;
+$backgroudDarkBlue: #007DFE;
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.colored-anchor {    /* unvisited link */
+  color: $backgroudDarkBlue;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}

@@ -1,0 +1,28 @@
+@import "../../../../../App.scss";
+
+.nav-item {
+  padding: 20px;
+  color: white !important;
+  text-decoration: none;
+}
+
+.nav-item:hover{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+// a {
+//   text-decoration: none;
+// }
+
+// a.nostyle:link {
+//   text-decoration: inherit;
+//   color: inherit;
+//   cursor: auto;
+// }
+
+// a.nostyle:visited {
+//   text-decoration: inherit;
+//   color: inherit;
+//   cursor: auto;
+// }

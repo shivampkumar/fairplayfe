@@ -1,0 +1,41 @@
+@import "../../../../App.scss";
+
+.header-properties {
+  background-color: $backgroudColor !important;
+  height: 60px;
+  position: relative;
+}
+
+.brand-name {
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+}
+
+.brand-name:hover{
+  cursor: default;
+}
+
+.nav-menu {
+  float: right;
+  display: flex;
+  top: 50%;
+  color: white;
+}
+
+.nav-logo {
+  height: 40px;
+  margin: -12px;
+  padding-right: 25px;
+  padding-left: 20px;
+}
+
+@media (max-width: 800px) {
+  .nav-menu {
+    flex-direction: column;
+    display: none;
+  }
+}

@@ -1,0 +1,38 @@
+.footer {
+  background: #333333;
+  padding: 20px;
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  color:white;
+}
+
+.footer-header {
+  font-weight: bold;
+  font-size: 25px;
+  padding: 13px;
+}
+
+.footer-menu {
+  display: flex;
+}
+
+.freepik-footer {
+  padding-left: 12px;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .footer-menu {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}

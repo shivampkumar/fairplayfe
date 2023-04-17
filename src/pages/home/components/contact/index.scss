@@ -1,0 +1,55 @@
+@import "../../../../App.scss";
+
+.contact-heading {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.content-content {
+  text-align: center;
+  margin: 20px 40px 40px 40px;
+  font-size: 20px;
+}
+
+.contact-container {
+  background-color: $backgroudLightBlue;
+  padding: 20px;
+}
+
+.activeSubmit {
+  cursor: pointer;
+}
+
+.inactiveSubmit {
+  cursor: wait;
+  opacity: 0.5;
+}
+
+.submitInput {
+  background-color: #1261A0;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0px 0px 0px 20px;
+}
+
+.contact-email {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.demo-signup-form {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
