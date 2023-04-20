@@ -9,7 +9,7 @@ const Footer = (props) => {
     <div className="footer">
       <div className="container">
         <div className="footer-content">
-          <div className="footer-header">Codr</div>
+          <div className="footer-header">FairPlay</div>
           <div className="footer-menu">
             {!withLink &&  <NavMenu name="About" reference="about" />}
             {!withLink &&  <NavMenu name="Features" reference="features" />}

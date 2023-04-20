@@ -11,7 +11,7 @@ function Header(props) {
       <div className="container">
         <div className="brand-name">
           <img src={logo} className="nav-logo" alt="logo" />
-            Codr
+            FairPlay
         </div>
         <div className="nav-menu">
           {!withLink && <NavMenu name="About" reference="about" />}

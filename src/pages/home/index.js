@@ -26,21 +26,21 @@ const Home = () => {
         <div className="features-block">
           <Feature
             icon_name="build"
-            heading="Automated Testing"
-            content="100% automated functional test cases to verify correctness"
+            heading="Re-Engineered Data"
+            content=""
             image={automateTestingFeatureImage}
           />
           <Feature
             icon_name="code"
-            heading="Cloud IDE"
-            content="A uniform environment to solve questions"
+            heading="Better Insights"
+            content=""
             darkReverse={true}
             image={cloudIdeFeatureImage}
           />
           <Feature
             icon_name="add_task"
-            heading="Ease"
-            content="Easy sharing of solution code and reporting"
+            heading="Ease of Use"
+            content="FHIR compliant, easy to integrate with existing systems."
             image={hiringEaseFeatureImage}
           />
         </div>

@@ -8,18 +8,13 @@ function About() {
         <h2 className="about-heading">About</h2>
         <div className="about-content">
           <p>
-            There are a large number of platforms which help you evaluate candidates based on Data Structures and Algorithms.
-            But correctly hiring a Frontend Developer requires Manual evaluation, which becomes a bottleneck.
-            Hence, companies are able to evaluate a lesser number of candidates. Further, candidates may use different environments,
-            and getting their code to run in other places may not be pragmatic. Hence, recruiters are stuck with screensharing,
-            screenshots which furthur deepen the bottleneck.
+          FairPlay is an innovative app that is designed to ensure that hospital readmission risk prediction models are accurate for patients from all ethnic backgrounds. The app does this by rebalancing the training data used to create the predictive model, ensuring that the data accurately reflects the diversity of the patient population.
+          The issue of bias in healthcare is a significant one, with studies showing that certain ethnic groups are more likely to experience adverse outcomes than others. One of the reasons for this is that predictive models used in healthcare are often trained on data that does not represent the full diversity of the patient population, leading to inaccurate predictions for certain groups.
           </p>
-
           <p>
-            Codr is built on a solid understanding of these challenges. 
-            Codr is designed to automate the complete process. From the initial problem statement, complete with recommended
-            design, and API stubs, to a uniform cloud IDE environment, we give the candidate everything they need to prove themselves. 
-            The solution is evaluated and the Recruiter is given a complete report!
+          FairPlay addresses this issue by using advanced algorithms to identify areas where the training data may be biased and adjusting it accordingly. This ensures that the predictive model is accurate for everyone, regardless of their ethnicity.
+          With FairPlay, hospitals and healthcare providers can have confidence that their predictive models are providing accurate results for all patients. By eliminating bias in the training data, the app helps to ensure that all patients receive the best possible care, regardless of their background.
+          Overall, FairPlay is a powerful tool that is helping to address the issue of bias in healthcare and ensuring that hospital readmission risk prediction models are accurate for everyone. Whether you're a healthcare provider or a patient, FairPlay is an app that is making a real difference in the world of healthcare.
           </p>
           <br /><br /><br />
         </div>

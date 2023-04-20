@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import frontPageVis from "./../../../../assets/front-page-vis.jpg";
-import Typed from 'typed.js';
+import Typical from "react-typical";
 
 const Intro = () => {
   const executeContactScroll = () => {
@@ -15,28 +15,33 @@ const Intro = () => {
         <div className="container">
           <div className="intro-content">
             <div className="intro-text">
-              Frontend Developer Hiring made
+              Health Diagnosis made
               <br />
-              <Typed
-                strings={[
-                  'Some <i>strings</i> are slanted',
-                  'Some <strong>strings</strong> are bold',
-                  'HTML characters &times; &copy;'
-                ]}
-              />,
+              <Typical
+                  loop={Infinity}
+                  wrapper="b"
+                  steps={[
+                    'Fairer',
+                    3000,
+                    'Equitable',
+                    3000,
+                    'Better',
+                    3000
+                  ]}
+                />
             </div>
             <div className="intro-text-description">
-              Evaluate Frontend Developers with a 100% automated testing platform
+              Predict readmission risk accurately for patients, regardless of their ethnicity. 
               <br />
-               Evaluate more candidates in less time
+               Make your AI more Equitable.
             </div>
             <div className="nav-item">
-              <button
+              {/* <button
                 className="intro-get-in-touch-btn"
                 onClick={executeContactScroll}
               >
                 Interested? Learn More
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -44,10 +49,10 @@ const Intro = () => {
       <div className="container intro-second-part">
         <div className="intro-second-part-text">
           <div className="intro-second-line-first">
-            Hiring Frontend Engineers is tricky. From take home projects to environment discrepancies to screenshots, the process needs a revamp
+            While the healthcare industry is moving towards AI, it is important to make sure that the AI is fair to all. Insert stats here.
           </div>
           <div className="intro-second-line-second">
-            Codr takes care of evaluation end to end, and makes the process easier.
+            FairPlay rebalances the data to make sure that when we predict readmission, we do it correctly for everyone.
           </div>
         </div>
         <img src={frontPageVis} className="intro-vis" alt="intro-vis" />
