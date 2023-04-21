@@ -33,7 +33,7 @@ const Home = () => {
           <Feature
             icon_name="code"
             heading="Better Insights"
-            content=""
+            content="For better decision making."
             darkReverse={true}
             image={cloudIdeFeatureImage}
           />
