@@ -3,6 +3,7 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 import frontPageVis from "./../../../../assets/front-page-vis.jpg";
 import Typical from "react-typical";
+import { Typography, Box} from '@material-ui/core';
 
 const Intro = () => {
   const executeContactScroll = () => {
@@ -31,10 +32,10 @@ const Intro = () => {
                 />
             </div>
             <div className="intro-text-description">
-              Predict readmission risk accurately for patients, regardless of their ethnicity. 
+              Make the right predictions for your patients, regardless of their ethnicity. 
               <br />
-               Make your AI more Equitable.
             </div>
+            <div className="bold-text"> Cloud-based . API-enabled . FHIR-native </div>
             <div className="nav-item">
               {/* <button
                 className="intro-get-in-touch-btn"

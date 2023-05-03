@@ -1,0 +1,26 @@
+@import "../../App.scss";
+
+.features-block {
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: row;
+}
+
+.predictContainer {
+  background-color: $backgroudLightBlue;
+}
+
+@media (max-width: 800px) {
+  .features-block {
+    flex-direction: column;
+  }
+}
+
+.features-heading {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 40px;
+  font-weight: 400;
+  margin-top: 0px;
+}
