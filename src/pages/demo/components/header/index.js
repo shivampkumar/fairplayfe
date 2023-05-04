@@ -3,6 +3,7 @@ import './index.scss';
 import logo from './../../../../assets/logo.png'
 import NavMenu from './navMenu'
 import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 function Header(props) {
   const withLink = props.withoutLink ? false : true;

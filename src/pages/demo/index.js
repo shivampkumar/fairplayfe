@@ -3,23 +3,47 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Select, MenuItem, Button, List, ListItem, ListItemText, Table, TableHead, TableBody, TableRow, TableCell  } from '@material-ui/core';
 import Header from '../demo/components/header';
 import './index.scss';
-import Predictor from './components/predicter';
+import { useNavigate } from 'react-router-dom';
+import PatientDetails from '../patientDetails';
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      height: '100vh'
+      height: '100vh',
+      backgroundColor: '#f5f5f5',
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
+      backgroundColor: '#fff',
+      borderRadius: '5px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+      height: '90vh'
     },
+    paper2: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        backgroundColor: '#fff',
+        borderRadius: '5px',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+        height: '50vh'
+      },
+    fullHeightGridItem: {
+        height: '90vh',
+    },
+    bottomText: {
+        position: 'absolute',
+        right: theme.spacing(70),
+        bottom: theme.spacing(20),
+      },
   }));
   
 
 const Demo = () => {
     const classes = useStyles();
+    const navigate = useNavigate();
     const [patients, setPatients] = useState([]);
     const [selectedPatient, setSelectedPatient] = useState('');
     const [patientDetails, setPatientDetails] = useState(null);
@@ -87,7 +111,7 @@ const Demo = () => {
   return (
     <div className={classes.root}>
     <Header withoutLink={true} />
-    <Grid container spacing={3}>
+    <Grid container spacing={1}>
     <Grid item xs={3}>
         <Paper className={classes.paper}>
         <h3>Patient Lists</h3>
@@ -110,9 +134,9 @@ const Demo = () => {
         </List>
         </Paper>
     </Grid>
-    <Grid item xs={5}>
-        <Paper className={classes.paper}>
-        <h3>"My Team\CurrentICUPatients</h3>
+    <Grid item xs={9}>
+        <Paper className={classes.paper2}>
+        <h3>My Team\CurrentICUPatients</h3>
         <Table>
             <TableHead>
                 <TableRow>
@@ -122,13 +146,13 @@ const Demo = () => {
                 <TableCell>Diagnosis</TableCell>
                 <TableCell>Admit Time</TableCell>
                 <TableCell>Ethnicity</TableCell>
-                <TableCell>Hospital Admit Time</TableCell>
+                <TableCell>Last Reviewed</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
                 {patients.map((patient) => (
                 <TableRow key={patient.id}
-                        onClick={() => setSelectedPatient(patient)}
+                        onClick={() => navigate(`/patient-details/${patient.id}`)}
                         selected={selectedPatient && selectedPatient.id === patient.id}
                 >
                     <TableCell>{patient.location}</TableCell>
@@ -144,14 +168,8 @@ const Demo = () => {
          </Table>
         </Paper>
     </Grid>
-    <Grid item xs={4}>
-        <Paper className={classes.paper}>
-        <h3>FairPlay SMART on FHIR App</h3>
-        <br></br>
-         {selectedPatient && <Predictor selectedPatient={selectedPatient} />}
-        </Paper>
     </Grid>
-    </Grid>
+    <div className={classes.bottomText}>Select a patient to get started</div>
     </div>
     );
 }
