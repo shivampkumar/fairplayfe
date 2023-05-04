@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Select, MenuItem, Button, List, ListItem, ListItemText, Table, TableHead, TableBody, TableRow, TableCell  } from '@material-ui/core';
+import { Grid, Paper, Select, MenuItem, Button,Container,Collapse, List, ListItem,ListItemText, Typography,ListItemIcon, Table, TableHead, TableBody, TableRow, TableCell, Divider  } from '@material-ui/core';
 import Header from '../demo/components/header';
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
 import PatientDetails from '../patientDetails';
-
+import GroupsIcon from '@material-ui/icons/Group';
+import ListIcon from '@material-ui/icons/List';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       height: '100vh',
       backgroundColor: '#f5f5f5',
+    },
+    selected: {
+      backgroundColor: theme.palette.action.selected,
     },
     paper: {
       padding: theme.spacing(2),
@@ -19,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#fff',
       borderRadius: '5px',
       boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-      height: '90vh'
     },
     paper2: {
         padding: theme.spacing(2),
@@ -32,6 +35,13 @@ const useStyles = makeStyles((theme) => ({
       },
     fullHeightGridItem: {
         height: '90vh',
+    },
+    listContainer: {
+      height: '30vh',
+      overflow: 'auto',
+    },
+    nested: {
+      paddingLeft: theme.spacing(4),
     },
     bottomText: {
         position: 'absolute',
@@ -47,7 +57,10 @@ const Demo = () => {
     const [patients, setPatients] = useState([]);
     const [selectedPatient, setSelectedPatient] = useState('');
     const [patientDetails, setPatientDetails] = useState(null);
-
+    const [selectedItem, setSelectedItem] = useState(null);
+    const handleSelectItem = (item) => {
+      setSelectedItem(item);
+    };
     // fetch the list of patients on component mount
     useEffect(() => {
         // fetch('http://localhost:5000/patients')
@@ -113,26 +126,195 @@ const Demo = () => {
     <Header withoutLink={true} />
     <Grid container spacing={1}>
     <Grid item xs={3}>
+     <Grid item xs={12}>
         <Paper className={classes.paper}>
-        <h3>Patient Lists</h3>
-        <List>
-            <ListItem button>
-                <ListItemText primary="My Patients" />
+        <Typography variant="h6">My Lists</Typography>
+          <List>
+            <ListItem
+              button 
+              onClick={() => handleSelectItem(null)}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="blank" />
             </ListItem>
-            <ListItem button>
-                <ListItemText primary="Research and Case Reports" />
+            <ListItem button onClick={()=> handleSelectItem(null)}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="Floors" />
             </ListItem>
-            <ListItem button selected={true}>
-                <ListItemText primary="My Team\CurrentICUPatients" />
+            <ListItem button onClick={()=> handleSelectItem(null)}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="Justin's List" />
             </ListItem>
-            <ListItem button>
-                <ListItemText primary="Shared patient lists" />
+            <ListItem button onClick={()=> handleSelectItem(null)}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="My current Team" />
             </ListItem>
-            <ListItem button>
-                <ListItemText primary="My Favorite List" />
-            </ListItem> 
-        </List>
+            <ListItem button onClick={()=> handleSelectItem(null)}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="My Group/Team Patients" />
+            </ListItem>
+            <ListItem button onClick={()=> handleSelectItem(null)}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="My Team/Patients" />
+            </ListItem>
+            <ListItem 
+              button 
+              selected={selectedItem === "ICU Patients/Current"}
+              onClick={() => handleSelectItem("ICU Patients/Current")}
+              >
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="ICU Patients/Current" />
+            </ListItem >
+            <ListItem
+               button 
+               onClick={() => handleSelectItem(null)}
+            >
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="My Favorite Lists" />
+            </ListItem>
+            <ListItem
+              button 
+              onClick={() => handleSelectItem(null)}
+            >
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="Shared Patient Lists" />
+            </ListItem>
+          </List>
         </Paper>
+      </Grid>
+      <Divider></Divider>
+      <Grid item xs={12}>
+        <Paper className={classes.paper}>
+        <Typography variant="h6">Available Lists</Typography>
+        <Container className={classes.listContainer}>
+      <List>
+         <ListItem
+         button 
+         onClick={() => handleSelectItem(null)}>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Heart Care PC" />
+        </ListItem>
+        <ListItem
+               button 
+               onClick={() => handleSelectItem(null)}        >
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Heart Consults/MI" />
+        </ListItem>
+        <ListItem
+          button 
+          onClick={() => handleSelectItem(null)}       
+        >
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA McLaren Cardiovascular Institute" />
+        </ListItem>
+        <ListItem
+          button 
+          onClick={() => handleSelectItem(null)}        
+        >
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Med Team A" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Med Team B" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Med Team C" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Med Team D" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Med Team E" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Mercy Hospice" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA NB/NICU" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA NICU Air Leaks" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Oakland Hills Cardiology" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Orange Assigned" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA Orange Medicine Core Faculty" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA PAT Review" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="SJOA DH Made lo Bo" />
+        </ListItem>
+        </List>
+        </Container>
+          </Paper>
+      </Grid>
     </Grid>
     <Grid item xs={9}>
         <Paper className={classes.paper2}>
@@ -150,7 +332,7 @@ const Demo = () => {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {patients.map((patient) => (
+                { selectedItem && (patients.map((patient) => (
                 <TableRow key={patient.id}
                         onClick={() => navigate(`/patient-details/${patient.id}`)}
                         selected={selectedPatient && selectedPatient.id === patient.id}
@@ -163,7 +345,7 @@ const Demo = () => {
                     <TableCell>{patient.ethnicity}</TableCell>
                     <TableCell>{patient.hospitalAdmitTime24}</TableCell>
                 </TableRow>
-                ))}
+                )))}
             </TableBody>
          </Table>
         </Paper>
