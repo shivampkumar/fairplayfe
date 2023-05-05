@@ -78,11 +78,11 @@ const PatientDetails = () => {
       id: 2,
       location: 'Room 102',
       name: 'Jane Smith',
-      age: 35,
+      age: 43,
       gender: 'Female',
       diagnosis: 'Diabetes',
-      admitTime: '2022-05-02T12:45:00Z',
-      ethnicity: 'African American',
+      admitTime: '2023-02-02T12:45:00Z',
+      ethnicity: 'Black or African American',
       hospitalAdmitTime24: '12:45:00',
     },
     {
@@ -138,7 +138,7 @@ const PatientDetails = () => {
 
   return (
     <div className={classes.root}>
-      <Dialog open={openModal} onClose={handleCloseModal} PaperProps={{ style: { width: '80%', height: '70%' } }}>
+      <Dialog open={openModal} onClose={handleCloseModal} PaperProps={{ style: { width: '80%', height: '80%' } }}>
         <DialogTitle>FairPlay Readmission Predictor</DialogTitle>
         <DialogContent>
           <Predictor selectedPatient = {patient} />
@@ -195,7 +195,7 @@ const PatientDetails = () => {
                     <Typography variant="h8">Pcp -General</Typography>
                   </Grid>
                 </Grid>
-                <Typography variant="h8">Coverage: <strong>None </strong></Typography>
+                <Typography variant="h8">Coverage: <strong>AACA </strong></Typography>
               </div>
               <Divider />
             <div className={classes.section}>
@@ -273,7 +273,6 @@ const PatientDetails = () => {
             >
               <Tab className={classes.tab} label="Snapshot" />
               <Tab className={classes.tab} label="Chart Review" />
-              <Tab className={classes.tab} label="Allergies" />
               <Tab className={classes.tab} label="Medications" />
               <Tab className={classes.tab} label="Problem List" />
               <Tab className={classes.tab} label="Demographics" />

@@ -51,15 +51,15 @@ const useStyles = makeStyles((theme) => ({
 const Card1 = () => {
   const classes = useStyles();
   const patient = {
-    id: 3,
-      location: 'Room 103',
-      name: 'Bob Johnson',
-      age: 50,
-      gender: 'Male',
-      diagnosis: 'Cancer',
-      admitTime: '2022-05-02T15:20:00Z',
-      ethnicity: 'Asian',
-      hospitalAdmitTime24: '15:20:00'
+    id: 2,
+    location: 'Room 102',
+    name: 'Jane Smith',
+    age: 43,
+    gender: 'Female',
+    diagnosis: 'Diabetes',
+    admitTime: '2023-02-02T12:45:00Z',
+    ethnicity: 'Black or African American',
+    hospitalAdmitTime24: '12:45:00',
   }
 
   return (
